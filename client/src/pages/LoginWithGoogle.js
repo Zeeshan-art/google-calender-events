@@ -9,7 +9,7 @@ const LoginWithGoogle = () => {
     const handleGoogleLogin = async () => {
         try {
             setIsLoading(true);
-            window.location.href = "http://localhost:5000/google";
+            window.location.href = "http://localhost:5000/api/google";
         } catch (error) {
             setError('Failed to connect with Google. Please try again.');
             setIsLoading(false);
@@ -19,7 +19,6 @@ const LoginWithGoogle = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
             <div className="max-w-md w-full space-y-8 p-10 bg-white rounded-2xl shadow-xl transition-all duration-300 transform hover:scale-105">
-                {/* Logo */}
                 <div className="flex justify-center">
                     <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center">
                         <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +27,6 @@ const LoginWithGoogle = () => {
                     </div>
                 </div>
 
-                {/* Header */}
                 <div className="text-center">
                     <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
                         Welcome Back
@@ -38,7 +36,6 @@ const LoginWithGoogle = () => {
                     </p>
                 </div>
 
-                {/* Login Button */}
                 <div className="mt-8">
                     <button
                         onClick={handleGoogleLogin}
@@ -46,7 +43,6 @@ const LoginWithGoogle = () => {
                         className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-200 ease-in-out disabled:opacity-70 disabled:cursor-not-allowed transform hover:-translate-y-1"
                     >
                         <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                            {/* Google Icon */}
                             <svg 
                                 className="h-5 w-5 text-blue-500 group-hover:text-blue-400" 
                                 viewBox="0 0 24 24"
@@ -71,15 +67,11 @@ const LoginWithGoogle = () => {
                         </span>
                     </button>
                 </div>
-
-                {/* Error Message */}
                 {error && (
                     <div className="mt-4 text-center bg-red-50 text-red-600 py-3 px-4 rounded-lg text-sm animate-pulse">
                         {error}
                     </div>
                 )}
-
-                {/* Additional Info */}
                 <div className="mt-6">
                     <p className="text-xs text-center text-gray-500">
                         By connecting, you agree to share your Google Calendar information 
